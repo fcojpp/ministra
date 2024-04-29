@@ -75,7 +75,7 @@ Para restaurar la base de datos con uno de los ficheros generados, tenemos que e
 Nos mostrará un listado de las copias disponibles y tendremos que indicar el nombre del archivo que queremos restaurar, luego nos pedirá la contraseña de root de mysql por seguridad.
 
 ### Configuración programada de copias sql
-<a name="1"></a>
+<a name="#1"></a>
 Para configurar las copias de la base de datos sql automáticas añadiremos la siguiente línea al archivo /etc/crontab, con esto la estaremos configurando todos los días a las 1:00 horas:
 
     00 1   * * *   ministra docker exec mysql-server ./opt/backup/copias.sh &> /dev/null
