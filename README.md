@@ -67,6 +67,8 @@ Y para la puesta en marcha lo haremos con el script start.sh:
 
     ./start.sh
 
+[Subir](#top)
+
 <a name="copia"></a>
 
 ### Realizar copia de seguridad de la base de datos
@@ -91,5 +93,6 @@ Nos mostrará un listado de las copias disponibles y tendremos que indicar el no
 
 Para configurar las copias de la base de datos sql automáticas añadiremos la siguiente línea al archivo /etc/crontab, con esto la estaremos configurando todos los días a las 1:00 horas:
 
-    00 1   * * *   ministra docker exec mysql-server ./opt/backup/copias.sh &> /dev/null
+    00 1   * * *   << aquí el usuario de tu server >> docker exec mysql-server ./opt/backup/copias.sh &> /dev/null
+
 [Subir](#top)
