@@ -29,6 +29,10 @@ Para modificar la contraseña del usuario root de Mysql se debe sustituir en 3 a
 `/backup/copias.sh`
 `custom.ini`
 
+Y cambiaremos los permisos de ejecución de los scripts:
+
+    sudo chmod +x restaurar_copia.sh start.sh stop.sh ./backup/copias.sh ./backup/restaura_sql.sh
+
 <a name="instalar"></a>
 
 ### Puesta en funcionamiento
