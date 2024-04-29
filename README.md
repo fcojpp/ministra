@@ -83,7 +83,7 @@ Podemos realizar una copia de la base de datos ejecutando el siguiente comando:
 
 Para restaurar la base de datos con uno de los ficheros generados, tenemos que ejecutar lo siguiente:
 
-    ./restaurar_copia.sh
+    ./restaura_copia.sh
 
 Nos mostrará un listado de las copias disponibles y tendremos que indicar el nombre del archivo que queremos restaurar, luego nos pedirá la contraseña de root de mysql por seguridad.
 
