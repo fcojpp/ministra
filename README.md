@@ -1,5 +1,4 @@
 <a name="top"></a>
-
 # Ministra server para IPTV    ![Badge](https://img.shields.io/badge/ESTADO-EN%20CONSTRUCCION-yellow)
 
 ***
