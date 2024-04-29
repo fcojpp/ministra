@@ -58,7 +58,7 @@ El usuario por defecto es `admin` y la contraseña `1`.
 
 ### Parada e inicio del sistema
 
-Para parar los contenedores utilizaremos el script start.sh que ejecutaremos con:
+Para parar los contenedores utilizaremos el script stop.sh que ejecutaremos con:
 
     ./stop.sh
 
