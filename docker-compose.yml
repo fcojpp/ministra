@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+ mysql:
+      image: mysql:5.7
+      command: --sql-mode="NO_ENGINE_SUBSTITUTION" -hmysql-server
+      container_name: mysql-server
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      ports:
+      - 3306:3306
+      volumes:
+      - mysql-server:/var/lib/mysql
+      - ./backup/:/opt/backup/
+      networks:
+      - ministra_net
+
+ ministra:
+      image: fcojpp/ministra:latest
+      container_name: ministra-server
+      restart: always
+      environment:
+        MYSQLPASS: ${MYSQL_PASSWORD}
+        MYSQLADDR: mysql-server
+      ports:
+      - 80:80
+      volumes:
+      - ./custom.ini:/var/www/html/stalker_portal/server/custom.ini
+      networks:
+      - ministra_net
+
+networks:
+  ministra_net:
+
+volumes:
+  mysql-server:
