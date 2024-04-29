@@ -37,9 +37,11 @@ La primera vez que se ejecuta tardará en estar listo aproximadamente 10 minutos
 
 Nos deberá salir lo siguiente al final del log cuando esté operativo:
 
-`BUILD FINISHED`
+```
+BUILD FINISHED
 
-`Total time: 9 minutes  50.95 seconds`
+Total time: 9 minutes  50.95 seconds
+```
 
 Para acceder a la aplicación usaremos la siguiente dirección:
 
