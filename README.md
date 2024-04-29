@@ -18,7 +18,7 @@ Para la puesta en servicio del servidor Ministra se necesita arrancar dos conten
 
 Copiaremos todos los archivos en una carpeta y nos situaremos dentro de ella.
 
-Para modificar la contraseña del usuario root de Mysql se de sustituir en 3 archivos:
+Para modificar la contraseña del usuario root de Mysql se debe sustituir en 3 archivos:
 
 `.env`
 `/backup/copias.sh`
