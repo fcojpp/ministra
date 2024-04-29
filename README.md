@@ -74,6 +74,6 @@ Nos mostrará un listado de las copias disponibles y tendremos que indicar el no
 
 ### Configuración programada de copias sql
 
-Para configurar las copias de la base de datos sql automáticas añadiremos la siguiente linea al archivo /etc/crontab, con esto la estaremos configurando todos los días a las 1:00 horas:
+Para configurar las copias de la base de datos sql automáticas añadiremos la siguiente línea al archivo /etc/crontab, con esto la estaremos configurando todos los días a las 1:00 horas:
 
     00 1   * * *   ministra docker exec mysql-server ./opt/backup/copias.sh &> /dev/null
