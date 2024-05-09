@@ -26,6 +26,7 @@ services:
       - ./custom.ini:/var/www/html/stalker_portal/server/custom.ini
       networks:
       - ministra_net
+ 
  ntp:
       image: dockurr/chrony
       container_name: ntp
