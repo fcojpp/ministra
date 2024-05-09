@@ -26,7 +26,14 @@ services:
       - ./custom.ini:/var/www/html/stalker_portal/server/custom.ini
       networks:
       - ministra_net
-
+ ntp:
+      image: dockurr/chrony
+      container_name: ntp
+      environment:
+        NTP_SERVERS: "pool.ntp.org"
+      ports:
+      - 123:123/udp
+      restart: always
 networks:
   ministra_net:
 
