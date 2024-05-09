@@ -35,6 +35,9 @@ services:
       ports:
       - 123:123/udp
       restart: always
+      networks:
+      - ministra_net
+      
 networks:
   ministra_net:
 
