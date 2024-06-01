@@ -19,9 +19,9 @@ echo
 case $opcion in
     s)
         # Verificar si el archivo existe
-        if [ -f "/opt/backupL/$archivo_sql" ]; then
+        if [ -f "/opt/backup/$archivo_sql" ]; then
         # Restaurar la base de datos desde el archivo sql seleccionado
-        mysql -u root -p'Xj3kBT4nhJ' stalker_db < "/opt/backupL/$archivo_sql" 2> /dev/null
+        mysql -u root -p'Xj3kBT4nhJ' stalker_db < "/opt/backup/$archivo_sql" 2> /dev/null
         echo "Restauración completada!!!"
         echo
         else
