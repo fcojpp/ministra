@@ -21,7 +21,7 @@ Instalación servidor Ministra para red IPTV con contenedores Docker, para proye
 
 Para la puesta en servicio del servidor Ministra se necesita arrancar dos contenedores, uno con el servidor web y otro con la base de datos.
 
-Copiaremos todos los archivos en una carpeta y nos situaremos dentro de ella.
+Se copiarán todos los archivos en una carpeta y nos situaremos dentro de ella.
 
 Para modificar la contraseña del usuario root de Mysql se debe sustituir en 3 archivos:
 
@@ -29,23 +29,23 @@ Para modificar la contraseña del usuario root de Mysql se debe sustituir en 3 a
 `/backup/copias.sh`
 `custom.ini`
 
-Y cambiaremos los permisos de ejecución de los scripts:
+Se cambiarán los permisos de ejecución de los scripts:
 
-    sudo chmod +x restaurar_copia.sh start.sh stop.sh ./backup/copias.sh ./backup/restaura_sql.sh
+    sudo chmod +x crear_copia.sh restaurar_copia.sh start.sh stop.sh ./backup/copias.sh ./backup/restaura_sql.sh
 
 <a name="instalar"></a>
 
 ### Puesta en funcionamiento
 
-Para la primera puesta en marcha del sistema ejecutaremos la siguiente instrucción:
+Para la primera puesta en marcha del sistema se ejecutará la siguiente instrucción:
 
     docker compose up -d
 
-La primera vez que se ejecuta tardará en estar listo aproximadamente 10 minutos, lo podremos verificar revisando los logs del contendor ministra-server, con la siguiente instrución:
+La primera vez que se ejecuta tardará en estar listo aproximadamente 10 minutos, se puede verificar revisando los logs del contendor ministra-server, con la siguiente instrucción:
 
-    docker logs ministra-server
+    docker logs --follow ministra-server
 
-Nos deberá salir lo siguiente al final del log cuando esté operativo:
+Deberá salir lo siguiente al final del log cuando esté operativo:
 
 ```
 BUILD FINISHED
@@ -53,7 +53,7 @@ BUILD FINISHED
 Total time: 9 minutes  50.95 seconds
 ```
 
-Para acceder a la aplicación usaremos la siguiente dirección:
+Para acceder a la aplicación se uasará la siguiente dirección:
 
     http://ip_servidor/stalker_portal/server/adm/
     
@@ -77,9 +77,9 @@ Y para la puesta en marcha lo haremos con el script start.sh:
 
 ### Realizar copia de seguridad de la base de datos
 
-Podemos realizar una copia de la base de datos ejecutando el siguiente comando:
+Para realizar una copia de seguridad de la base de datos se ejecutará el siguiente comando:
 
-    docker exec mysql-server ./opt/backup/copias.sh
+    ./crear_copia.sh
 
 <a name="restaura"></a>
 
@@ -89,13 +89,13 @@ Para restaurar la base de datos con uno de los ficheros generados, tenemos que e
 
     ./restaurar_copia.sh
 
-Nos mostrará un listado de las copias disponibles y tendremos que indicar el nombre del archivo que queremos restaurar, luego nos pedirá la contraseña de root de mysql por seguridad.
+Mostrará un listado de las copias disponibles y se tendrá que indicar el nombre del archivo que se quiere restaurar.
 
 <a name="cron"></a>
 
 ### Configuración programada de copias sql
 
-Para configurar las copias de la base de datos sql automáticas añadiremos la siguiente línea al archivo /etc/crontab, con esto la estaremos configurando todos los días a las 1:00 horas:
+Para configurar las copias de la base de datos sql automáticas se añadirá la siguiente línea al archivo /etc/crontab, con esto quedará configurada todos los días a las 1:00 horas:
 
     00 1   * * *   << aquí el usuario de tu server >> docker exec mysql-server ./opt/backup/copias.sh &> /dev/null
 
